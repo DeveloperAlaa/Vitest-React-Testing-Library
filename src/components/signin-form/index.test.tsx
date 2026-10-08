@@ -1,0 +1,58 @@
+import { render, screen } from "@testing-library/react";
+import Signin from ".";
+
+describe("<Signin /> Component", () => {
+  it("renders an h2 heading element", () => {
+    render(<Signin />);
+    const h2Element = screen.getByRole("heading", {
+      level: 2,
+    });
+
+    expect(h2Element).toBeInTheDocument();
+  });
+
+  it("renders an h3 heading element", () => {
+    render(<Signin />);
+    const h3Element = screen.getByRole("heading", {
+      level: 3,
+    });
+
+    expect(h3Element).toBeInTheDocument();
+  });
+
+  it("renders the username input element correctly", () => {
+    render(<Signin />);
+    const usernameInputElement = screen.getByRole("textbox", {
+      name: "Username",
+    });
+
+    expect(usernameInputElement).toBeInTheDocument();
+  });
+
+  it("renders the password input element correctly", () => {
+    render(<Signin />);
+    const passwordInputElement = screen.getByLabelText("Password");
+
+    expect(passwordInputElement).toBeInTheDocument();
+  });
+
+  it("renders the bio input element correctly", () => {
+    render(<Signin />);
+
+    const bioInputElement = screen.getByRole("textbox", {
+      name: "Bio",
+    });
+
+    expect(bioInputElement).toBeInTheDocument();
+  });
+
+  it("renders the submit button element correctly", () => {
+    render(<Signin />);
+    
+    const submitButtonElement = screen.getByRole("button", {
+      name: "Submit",
+    });
+
+    expect(submitButtonElement).toBeInTheDocument();
+  });
+});
