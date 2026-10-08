@@ -1,6 +1,11 @@
+import ReactLogo from "../../assets/react.svg"
+
 export default function Signin() {
   return (
     <form>
+      <div>
+        <img src={ReactLogo} alt="React Logo" />
+      </div>
       <h2>SignIn Form</h2>
       <h3>Create a new account for free</h3>
 

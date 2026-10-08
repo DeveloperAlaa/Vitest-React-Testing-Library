@@ -66,11 +66,20 @@ describe("<Signin /> Component", () => {
   });
 
   it("renders the reactive age input element", () => {
-    render(<Signin />)
+    render(<Signin />);
 
-    const defalutAge = 20
-    const ageInputElement = screen.getByDisplayValue(defalutAge)
+    const defalutAge = 20;
+    const ageInputElement = screen.getByDisplayValue(defalutAge);
 
-    expect(ageInputElement).toBeInTheDocument()
-  })
+    expect(ageInputElement).toBeInTheDocument();
+  });
+
+  it("renders a react logo image", () => {
+    render(<Signin />);
+
+    const altText = "React Logo";
+    const reactLogo = screen.getByAltText(altText);
+
+    expect(reactLogo).toBeInTheDocument();
+  });
 });
