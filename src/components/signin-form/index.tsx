@@ -11,6 +11,8 @@ export default function Signin() {
 
       <span title="Close Menu">x</span>
 
+      <div data-testid="custom-el"></div>
+
       <div>
         <label htmlFor="username">Username</label>
         <input type="text" id="username" />

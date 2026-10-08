@@ -90,4 +90,12 @@ describe("<Signin /> Component", () => {
     const closeElement = screen.getByTitle(title);
     expect(closeElement).toBeInTheDocument();
   });
+
+  it("renders a custom HTMl element", () => {
+    render(<Signin />);
+
+    const customElement = screen.getByTestId("custom-el");
+
+    expect(customElement).toBeInTheDocument();
+  });
 });
