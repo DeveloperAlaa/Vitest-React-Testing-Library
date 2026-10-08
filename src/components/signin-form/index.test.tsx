@@ -39,9 +39,7 @@ describe("<Signin /> Component", () => {
   it("renders the bio input element correctly", () => {
     render(<Signin />);
 
-    const bioInputElement = screen.getByRole("textbox", {
-      name: "Bio",
-    });
+    const bioInputElement = screen.getByPlaceholderText("Enter your bio...");
 
     expect(bioInputElement).toBeInTheDocument();
   });

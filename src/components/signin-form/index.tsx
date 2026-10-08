@@ -16,7 +16,7 @@ export default function Signin() {
 
       <div>
         <label htmlFor="bio">Bio</label>
-        <input type="text" id="bio" />
+        <input type="text" placeholder="Enter your bio..." id="bio" />
       </div>
 
       <button>Submit</button>
