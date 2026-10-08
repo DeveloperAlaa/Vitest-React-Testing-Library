@@ -46,11 +46,22 @@ describe("<Signin /> Component", () => {
 
   it("renders the submit button element correctly", () => {
     render(<Signin />);
-    
+
     const submitButtonElement = screen.getByRole("button", {
       name: "Submit",
     });
 
     expect(submitButtonElement).toBeInTheDocument();
+  });
+
+  it("renders a paragraph element with terms and conditions", () => {
+    render(<Signin />);
+
+    const terms =
+      "By submiting your data you are accepting our terms and conditions";
+
+    const paragraghElement = screen.getByText(terms);
+
+    expect(paragraghElement).toBeInTheDocument();
   });
 });

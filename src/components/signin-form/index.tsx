@@ -19,6 +19,9 @@ export default function Signin() {
         <input type="text" placeholder="Enter your bio..." id="bio" />
       </div>
 
+      <div>
+        <p>By submiting your data you are accepting our terms and conditions</p>
+      </div>
       <button>Submit</button>
     </form>
   );
