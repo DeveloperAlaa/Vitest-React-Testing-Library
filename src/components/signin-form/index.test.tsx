@@ -82,4 +82,12 @@ describe("<Signin /> Component", () => {
 
     expect(reactLogo).toBeInTheDocument();
   });
+
+  it("renders a span with close title that reperesent a close icon", () => {
+    render(<Signin />);
+
+    const title = "Close Menu";
+    const closeElement = screen.getByTitle(title);
+    expect(closeElement).toBeInTheDocument();
+  });
 });

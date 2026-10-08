@@ -1,4 +1,4 @@
-import ReactLogo from "../../assets/react.svg"
+import ReactLogo from "../../assets/react.svg";
 
 export default function Signin() {
   return (
@@ -8,6 +8,8 @@ export default function Signin() {
       </div>
       <h2>SignIn Form</h2>
       <h3>Create a new account for free</h3>
+
+      <span title="Close Menu">x</span>
 
       <div>
         <label htmlFor="username">Username</label>
