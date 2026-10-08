@@ -10,6 +10,9 @@ export default function Signin() {
       </div>
 
       <div>
+        <input type="number" value={20} onChange={() => {}} />
+      </div>
+      <div>
         <label htmlFor="password">Password</label>
         <input type="password" placeholder="Enter Password" id="password" />
       </div>

@@ -64,4 +64,13 @@ describe("<Signin /> Component", () => {
 
     expect(paragraghElement).toBeInTheDocument();
   });
+
+  it("renders the reactive age input element", () => {
+    render(<Signin />)
+
+    const defalutAge = 20
+    const ageInputElement = screen.getByDisplayValue(defalutAge)
+
+    expect(ageInputElement).toBeInTheDocument()
+  })
 });
