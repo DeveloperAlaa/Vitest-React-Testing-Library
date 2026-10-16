@@ -1,78 +1,81 @@
-# React + TypeScript + Vite
+# Learn Testing React Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A practical repository for learning how to test React components professionally using **Vitest**, **React Testing Library**, and other essential testing tools.
 
-Currently, two official plugins are available:
+The goal is to understand how to write reliable, maintainable tests that verify component behavior, user interactions, and application functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+| Package | Purpose |
+|---|---|
+| [Vitest](https://vitest.dev/) | Test runner and assertion library for running tests, organizing test suites, and checking expected results. |
+| [jsdom](https://github.com/jsdom/jsdom) | Provides a simulated browser environment for running DOM-based tests in Node.js. |
+| [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) | Renders React components in tests and provides utilities to query and interact with them. |
+| [jest-dom](https://github.com/testing-library/jest-dom) | Adds readable DOM-specific assertions, such as `toBeInTheDocument()` and `toBeVisible()`. |
+| [user-event](https://testing-library.com/docs/user-event/intro/) | Simulates realistic user interactions, including clicking, typing, and keyboard navigation. |
+| [Testing Library DOM](https://testing-library.com/docs/dom-testing-library/intro/) | Provides DOM querying and interaction utilities used by React Testing Library and other Testing Library packages. |
+| [MSW](https://mswjs.io/) | Mocks network requests at the network boundary, allowing tests to simulate API responses without calling real services. |
+| [Vitest Coverage V8](https://vitest.dev/guide/coverage.html) | Measures code coverage to identify which parts of the codebase are exercised by tests. |
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Installation
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+Install the testing dependencies:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+pnpm add -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event @testing-library/dom msw
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Install the Vitest coverage provider:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+pnpm add -D @vitest/coverage-v8
 ```
+
+## What You'll Learn
+
+- **Component Testing:** Verify that React components render correctly.
+- **DOM Queries:** Find elements using accessible roles, labels, and text.
+- **User Interactions:** Test clicks, typing, keyboard events, and form submissions.
+- **DOM Assertions:** Check element visibility, presence, attributes, and other DOM properties.
+- **Asynchronous Testing:** Test loading states, asynchronous updates, and API responses.
+- **API Mocking:** Use MSW to simulate successful requests, server errors, and other network scenarios.
+- **Code Coverage:** Measure how much of your application is exercised by tests.
+- **Testing Best Practices:** Write tests that focus on observable behavior rather than implementation details.
+
+## Testing Philosophy
+
+This repository follows the guiding principle of React Testing Library:
+
+> The more your tests resemble the way your software is used, the more confidence they can give you.
+
+Rather than testing implementation details, focus on what users can see and do.
+
+For example, test whether a user can submit a form and see the expected result instead of checking whether a particular internal function was called.
+
+## Useful Commands
+
+Add the following scripts to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  }
+}
+```
+
+### Command Reference
+
+| Command | Description |
+|---|---|
+| `pnpm test` | Run tests in watch mode. |
+| `pnpm test:run` | Run all tests once. |
+| `pnpm test:coverage` | Run tests and generate a code coverage report. |
+
+## Project Goals
+
+The goal is to build a solid foundation in React component testing, progressing from basic rendering tests to realistic user interactions, asynchronous behavior, API mocking, and coverage analysis.
+
+**Focus:** Practical examples, clean test code, and industry-standard testing practices.
